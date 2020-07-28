@@ -1,0 +1,4 @@
+set export_registry="HKEY_CURRENT_USER\Software\SimonTatham"
+set output_path="C:\Users\User\Desktop\putty.reg"
+
+reg export %export_registry% %output_path%
