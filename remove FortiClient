@@ -1,0 +1,23 @@
+#Run the powershell with admin privilege
+
+#Enter the password to unlock the FortiClient configuration
+$password = xxxxxx
+
+#To export the config
+& "$Env:programfiles\Fortinet\Forticlient\fcconfig.exe" -m all -f "$Env:temp\config.conf" -o export -i 1
+
+#To remove the password from the config file
+$xml = [xml](Get-Content $Env:temp\config.conf);
+$xml.forticlient_configuration.system.ui.password = "";
+$xml.Save("$Env:temp\config.conf")
+
+#To import the config file which removed the password into FortiClient
+& "$Env:programfiles\Fortinet\Forticlient\fcconfig.exe" -m all -f "$Env:temp\config.conf" -o import -i 2 -k $password -q
+
+#To find the GUID of FortiClient
+$instance = Get-WmiObject Win32_Product -Filter "Name = 'FortiClient'"
+$appGUID = $instance.IdentifyingNumber
+
+#To remove the FortiClient
+MsiExec.exe /norestart /q/x $AppGUID REMOVE=ALL
+Remove-Item "$Env:public\Desktop\FortiClient.lnk"
