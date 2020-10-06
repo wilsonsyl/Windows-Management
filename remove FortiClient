@@ -4,7 +4,7 @@
 $password = xxxxxx
 
 #To export the config
-& "$Env:programfiles\Fortinet\Forticlient\fcconfig.exe" -m all -f "$Env:temp\config.conf" -o export -i 1
+& "$Env:programfiles\Fortinet\Forticlient\fcconfig.exe" -m all -f "$Env:temp\config.conf" -o export -i 1 -q
 
 #To remove the password from the config file
 $xml = [xml](Get-Content $Env:temp\config.conf);
