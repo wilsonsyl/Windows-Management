@@ -1,0 +1,8 @@
+Right Click on the target application .exe file
+Click "Send to"
+Click "Desktop (create shortcut)
+
+Go to the Desktop, right click to the shortcut file
+Click "Properties"
+Change "Target" field to the below: (remember to replace "%userprofile%\Desktop\example.exe" to your application path)
+cmd /min /C "set __COMPAT_LAYER=RUNASINVOKER && start "" "%userprofile%\Desktop\example.exe""
