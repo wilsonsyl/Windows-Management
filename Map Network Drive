@@ -1,0 +1,4 @@
+$User = "username"
+$PWord = ConvertTo-SecureString -String "Password" -AsPlainText -Force
+$cred = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $User, $PWord
+New-PSDrive -Name "Y" -Root "\\router.skynet.edu.kg\Storage" -Persist -PSProvider "FileSystem" -Credential $cred
