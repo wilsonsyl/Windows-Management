@@ -2,3 +2,4 @@ Get-AppxPackage *officehub* | Remove-AppxPackage
 Get-AppxPackage *xbox* | Remove-AppxPackage
 Get-AppxPackage *SolitaireCollection* | Remove-AppxPackage
 Get-AppxPackage *Office.OneNote* | Remove-AppxPackage
+Get-AppxPackage *windowscommunicationsapps* | Remove-AppxPackage
