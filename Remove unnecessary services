@@ -1,5 +1,7 @@
-Get-AppxPackage *officehub* | Remove-AppxPackage
-Get-AppxPackage *xboxapp* | Remove-AppxPackage
-Get-AppxPackage *SolitaireCollection* | Remove-AppxPackage
-Get-AppxPackage *Office.OneNote* | Remove-AppxPackage
-Get-AppxPackage *windowscommunicationsapps* | Remove-AppxPackage
+Get-AppxPackage *dell* | Remove-AppxPackage -ErrorAction SilentlyContinue
+Get-AppxPackage *officehub* | Remove-AppxPackage -ErrorAction SilentlyContinue
+Get-AppxPackage *xboxgaming* | Remove-AppxPackage -ErrorAction SilentlyContinue
+Get-AppxPackage *xboxapp* | Remove-AppxPackage -ErrorAction SilentlyContinue
+Get-AppxPackage *SolitaireCollection* | Remove-AppxPackage -ErrorAction SilentlyContinue
+Get-AppxPackage *Office.OneNote* | Remove-AppxPackage -ErrorAction SilentlyContinue
+Get-AppxPackage *windowscommunicationsapps* | Remove-AppxPackage -ErrorAction SilentlyContinue
